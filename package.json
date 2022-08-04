@@ -11,6 +11,7 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "dat.gui": "^0.7.9",
+    "framer-motion": "^4.1.17",
     "gl-matrix": "^3.4.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -55,6 +56,7 @@
     ]
   },
   "devDependencies": {
+    "@chakra-ui/storybook-addon": "^4.0.4",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
     "@storybook/addon-interactions": "^6.5.9",
