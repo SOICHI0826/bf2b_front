@@ -1,8 +1,7 @@
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
 import { Main } from './pages/Main';
-import { Sidebar } from './components/Sidebar/Sidebar';
-import { Thumbnail } from './components/Thumbnail/Thumbnail';
+import { WorkTest } from './pages/works/WorkTest';
 
 function App() {
   return (
@@ -10,6 +9,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path={'/'} element={<Main />} />
+          <Route path={'/test'} element={<WorkTest /> } />
         </Routes>
       </BrowserRouter>
     </ChakraProvider>
