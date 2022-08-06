@@ -1,14 +1,17 @@
-import { ChakraProvider } from "@chakra-ui/react"
-import './App.css';
-import { Header } from './components/Header/Header'
-import { Thumbnail } from './components/Thumbnail/Thumbnail'
-import { Footer } from './components/Footer/Footer'
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import { ChakraProvider } from '@chakra-ui/react';
+import { Main } from './pages/Main';
+import { Sidebar } from './components/Sidebar/Sidebar';
+import { Thumbnail } from './components/Thumbnail/Thumbnail';
 
 function App() {
   return (
     <ChakraProvider>
-        <Thumbnail title='Metaball' thumb='../public/logo192.png'/>
-        <Footer></Footer>
+      <BrowserRouter>
+        <Routes>
+          <Route path={'/'} element={<Main />} />
+        </Routes>
+      </BrowserRouter>
     </ChakraProvider>
   );
 }
