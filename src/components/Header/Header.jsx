@@ -3,18 +3,18 @@ import { Text, Box, Button, Avatar } from "@chakra-ui/react";
 
 export const Header = () => {
     return (
-        <Box display='flex' bg='#F5F5F5' w='1486px' h='168px'>
-            <div className={styles.headerMenu}>
-                <Button ml='60px' mr='60px' bg='#F5F5F5'>About</Button>
-                <Button mr='60px' bg='#F5F5F5' borderWidth='0px'>Works</Button>
-                <Button mr='60px' bg='#F5F5F5' borderWidth='0px'>News</Button>
-            </div>
-            <div className={styles.status}>
+        <Box display='flex' bg='#F5F5F5' w='100wh' h='15%'>
+            <Box className={styles.headerMenu} justifyContent='space-evenly' w='50%'>
+                <Button size='lg' variant='link' ml='60px' bg='#F5F5F5'>About</Button>
+                <Button size='lg' variant='link' bg='#F5F5F5' borderWidth='0px'>Works</Button>
+                <Button size='lg' variant='link' bg='#F5F5F5' borderWidth='0px'>News</Button>
+            </Box>
+            <Box className={styles.status} justifyContent='right' w='50%'>
                 <Avatar size='lg' mr='45px' bg='#E2E8F0'/>
-                <Text mr='60px'>Welcome guest</Text>
+                <Text mr='45px'>Welcome guest</Text>
                 <Button size='lg' mr='45px' bg='#1D71AD' color='white'>Login</Button>
-                <Button size='lg' bg='#1D71AD' color='white'>Signup</Button>
-            </div>
+                <Button size='lg' mr='200px' bg='#1D71AD' color='white'>Signup</Button>
+            </Box>
         </Box>
     )
 }
@@ -26,14 +26,12 @@ const styles = {
         display: flex;
         flexWrap: wrap;
         align-items: center;
-        margin-top: 40px;
-        margin-right: 450px;
+        margin-top: 50px;
     `,
     status: css`
         width: 660px;
         height: 64px;
         display: flex;
-        flex-wrap: wrap;
         align-items: center;
         margin-top: 40px;
     `
