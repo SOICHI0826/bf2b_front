@@ -3,21 +3,17 @@ import { Text, Box } from "@chakra-ui/react"
 
 export const Sidebar = () => {
     return (
-        <>
-            {/* paddingの修正 */}
-            <Box bg='#1D71AD' w='114px' h='calc(100vh)' pt='400px' pl='27px' pr='29px'>
-                <p className={styles.sideText}>Undex.com</p>
-            </Box>
-        </>
+        <Box bg='#1D71AD' pt='500px' pl='27px' pr='29px' w='114px' h='100vh'>
+            <Text className={styles.sideText} transform='rotate(-90deg)' whiteSpace='nowrap'>Undex.com</Text>
+        </Box>
     )
 }
 
 const styles = {
     sideText: css`
-        font-size: 48px;
+        font-size: 50px;
         text-align: center;
         -webkit-text-stroke: 2px #000000;
         color: #FDE5E5;
-        transform: rotate(-90deg);
     `
 }
