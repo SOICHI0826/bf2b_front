@@ -25,10 +25,10 @@ export const Header = (props) => {
             <Box className={styles.headerMenu} justifyContent='space-evenly' w='50%'>
                 <Box className={styles.aboutButton} mb='10px' display='flex' flexDirection='column'>
                     {menu === 'about' &&
-                    <Divider ml='60px' mb='10px' orientation='horizontal' borderColor="#FFA3A3" borderWidth='3px' width='20px'/>
+                    <Divider ml='63px' mb='10px' orientation='horizontal' borderColor="#FFA3A3" borderWidth='3px' width='20px'/>
                     }
                     {menu !== 'about' &&
-                    <Divider ml='60px' mb='10px' orientation='horizontal' borderColor="#F5F5F5" borderWidth='3px'/>
+                    <Divider ml='63px' mb='10px' orientation='horizontal' borderColor="#F5F5F5" borderWidth='3px'/>
                     }
                     <Button size='lg' variant='link' ml='60px' bg='#F5F5F5' onClick={handleNavAbout}>About</Button>
                 </Box>
