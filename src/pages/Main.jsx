@@ -12,7 +12,7 @@ export const Main = () => {
           <Sidebar />
         </Box>
         <Box className={styles.rightContainer} display='flex' flexDirection='column' w='100%'>
-          <Header />
+          <Header menu='works'/>
           <Box className={styles.worksContainer} ml='10%' mb='5%' bgColor='rgb(255, 230, 230, 0.3)' border='1px' borderColor='#000000' w='80%' h='70%'>
             <Box className={styles.upperContainer} pt='20px' display='flex' justifyContent='space-evenly'>
               <Thumbnail title='テスト'></Thumbnail>
