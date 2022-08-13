@@ -7,6 +7,9 @@ export const Header = () => {
     const handleNavLogin = () => {
         navigate('/login')
     }
+    const handleNavSignup = () => {
+        navigate('/signup')
+    }
     return (
         <Box display='flex' bg='#F5F5F5' w='100wh' h='15%'>
             <Box className={styles.headerMenu} justifyContent='space-evenly' w='50%'>
@@ -16,9 +19,9 @@ export const Header = () => {
             </Box>
             <Box className={styles.status} justifyContent='right' w='50%'>
                 <Avatar size='lg' mr='45px' bg='#E2E8F0'/>
-                <Text mr='45px'>Welcome guest</Text>
+                <Text mr='45px'>Welcome guest !</Text>
                 <Button size='lg' mr='45px' bg='#1D71AD' color='white' onClick={handleNavLogin}>Login</Button>
-                <Button size='lg' mr='200px' bg='#1D71AD' color='white'>Signup</Button>
+                <Button size='lg' mr='200px' bg='#1D71AD' color='white' onClick={handleNavSignup}>Signup</Button>
             </Box>
         </Box>
     )
