@@ -25,7 +25,7 @@ export const Header = (props) => {
             <Box className={styles.headerMenu} justifyContent='space-evenly' w='50%'>
                 <Box className={styles.aboutButton} mb='10px' display='flex' flexDirection='column'>
                     {menu === 'about' &&
-                    <Divider ml='63px' mb='10px' orientation='horizontal' borderColor="#FFA3A3" borderWidth='3px' width='20px'/>
+                    <Divider ml='63px' mb='10px' orientation='horizontal' borderColor="#FF5C96" borderWidth='3px' width='20px'/>
                     }
                     {menu !== 'about' &&
                     <Divider ml='63px' mb='10px' orientation='horizontal' borderColor="#F5F5F5" borderWidth='3px'/>
@@ -34,7 +34,7 @@ export const Header = (props) => {
                 </Box>
                 <Box className={styles.worksButton} mb='10px' display='flex' flexDirection='column'>
                     {menu === 'works' &&
-                    <Divider mb='10px' orientation='horizontal' borderColor="#FFA3A3" borderWidth='3px' width='20px'/>
+                    <Divider mb='10px' orientation='horizontal' borderColor="#FF5C96" borderWidth='3px' width='20px'/>
                     }
                     {menu !== 'works' &&
                     <Divider mb='10px' orientation='horizontal' borderColor="#F5F5F5" borderWidth='3px'/>
@@ -43,7 +43,7 @@ export const Header = (props) => {
                 </Box>
                 <Box className={styles.newsButton} mb='10px' display='flex' flexDirection='column'>
                     {menu === 'news' &&
-                    <Divider mb='10px' orientation='horizontal' borderColor="#FFA3A3" borderWidth='3px' width='20px'/>
+                    <Divider mb='10px' orientation='horizontal' borderColor="#FF5C96" borderWidth='3px' width='20px'/>
                     }
                     {menu !== 'news' &&
                     <Divider mb='10px' orientation='horizontal' borderColor="#F5F5F5" borderWidth='3px'/>
