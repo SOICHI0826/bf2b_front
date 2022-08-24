@@ -6,19 +6,13 @@ import { css } from "@emotion/css";
 
 export const News = () => {
   return (
-     <Box display='flex' bg='#F5F5F5' w='100%' h='100%'>
-        <Box className={styles.leftContainer}>
-          <Sidebar />
-        </Box>
-        <Box className={styles.rightContainer} display='flex' flexDirection='column' w='100%'>
-          <Header menu='news'/>
-          <Box className={styles.newsContainer} ml='10%' mb='5%' bgColor='rgb(255, 230, 230, 0.3)' border='1px' borderColor='#000000' w='80%' h='70%'>
-            <Text>News本文が来ます</Text>
-          </Box>
-          {/* もっと柔軟にFooterの位置に配置する */}
-          <Footer />
-        </Box>
-     </Box>
+    <Box className={styles.bg} display='flex' flexDirection='column' bg='#F5F5F5' w='100vw' h='100vh'>
+    <Header menu='news'/>
+    <Box className={styles.worksContainer} ml='12.5%' mt='15vh' mb='3vh' bgColor='rgb(255, 230, 230, 0.3)' border='1px' borderColor='#000000' w='75%' h='70%'>
+      <Text>News本文</Text>
+    </Box>
+    <Footer />
+ </Box>
   )
 }
 

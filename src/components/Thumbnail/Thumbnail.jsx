@@ -9,11 +9,12 @@ export const Thumbnail = (props) => {
       navigate('/test');
     };
     return (
-        <Box pl='10px' pt='10px' pr='10px' w='414px' h='318px'>
-           <Button type='button' mb='10px' bg='#000000' w='394px' h='240px' onClick={handleNavWork}>
+        <Box pl='10px' pt='10px' pr='10px' w='20vw' h='28vh'>
+           <Button mb='10px' bg='#000000' w='94%' h='80%' onClick={handleNavWork}>
+            <Image src='/logo192.png' />
            </Button>
-           <Box w='394px' h='50px'>
-              <Text ml='17px'>
+           <Box w='94%' h='12%'>
+              <Text>
                 { title }
               </Text>
            </Box>

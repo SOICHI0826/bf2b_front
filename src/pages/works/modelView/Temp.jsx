@@ -2,9 +2,9 @@ import { Header } from '../../../components/Header/Header';
 import { Footer } from '../../../components/Footer/Footer';
 import { Box, Heading } from '@chakra-ui/react';
 import { css } from "@emotion/css";
-import { WebGL } from './Test';
+import { WebGL } from './modelView';
 
-export const TestTemp = (props) => {
+export const modelView = (props) => {
   const title = 'TestWork';
   const canvasWidth = Math.ceil(window.innerWidth * 0.5);
   const canvasHeight= Math.ceil(window.innerHeight * 0.5);
