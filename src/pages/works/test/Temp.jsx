@@ -6,10 +6,6 @@ import { WebGL } from './Test';
 
 export const TestTemp = (props) => {
   const title = 'TestWork';
-  const canvasWidth = Math.ceil(window.innerWidth * 0.5);
-  const canvasHeight= Math.ceil(window.innerHeight * 0.5);
-  console.log(canvasWidth);
-  console.log(canvasHeight);
   return (
      <Box className={styles.bg} display='flex' flexDirection='column' bg='#F5F5F5' w='100vw' h='100vh'>
           <Header menu='works'/>

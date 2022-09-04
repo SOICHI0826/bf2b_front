@@ -2,6 +2,7 @@ import { css } from "@emotion/css";
 import { Text, Box, Button, Avatar, Divider, Image } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
+
 export const Header = (props) => {
     const menu = props.menu;
     const navigate = useNavigate();

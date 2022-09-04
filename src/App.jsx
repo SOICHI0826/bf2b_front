@@ -6,6 +6,7 @@ import { About } from './pages/About';
 import { Login } from './pages/Login';
 import { Signup } from './pages/Signup';
 import { TestTemp } from './pages/works/test/Temp';
+import { ModelView } from './pages/works/modelView/Temp';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path={'/login'} element={<Login />} />
           <Route path={'/signup'} element={<Signup />} />
           <Route path={'/test'} element={<TestTemp /> } />
+          <Route path={'/modelView'} element={<ModelView />} />
         </Routes>
       </BrowserRouter>
     </ChakraProvider>
