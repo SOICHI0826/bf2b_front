@@ -1,6 +1,5 @@
 import { Header } from '../components/Header/Header';
 import { Footer } from '../components/Footer/Footer';
-import { Sidebar } from '../components/Sidebar/Sidebar';
 import { Thumbnail } from '../components/Thumbnail/Thumbnail';
 import { Box, Select } from '@chakra-ui/react';
 import { css } from "@emotion/css";
@@ -17,14 +16,14 @@ export const Main = () => {
         </Box> */}
         <Box className={styles.worksContainer} ml='12.5%' mt='15vh' mb='3vh' bgColor='rgb(255, 230, 230, 0.3)' border='1px' borderColor='#000000' w='75%' h='70%'>
           <Box className={styles.upperContainer} pt='20px' display='flex' justifyContent='space-evenly'>
-            <Thumbnail title='テスト'></Thumbnail>
-            <Thumbnail title='テスト'></Thumbnail>
-            <Thumbnail title='テスト'></Thumbnail>
+            <Thumbnail title='nissan-gtr' route='/test'></Thumbnail>
+            <Thumbnail title='nissan-gtr' route='/test'></Thumbnail>
+            <Thumbnail title='nissan-gtr' route='/test'></Thumbnail>
           </Box>
           <Box className={styles.lowerContainer} pt='20px' display='flex' justifyContent='space-evenly'>
-            <Thumbnail title='テスト'></Thumbnail>
-            <Thumbnail title='テスト'></Thumbnail>
-            <Thumbnail title='テスト'></Thumbnail>
+            <Thumbnail title='modelView' route='/modelView'></Thumbnail>
+            <Thumbnail title='modelView' route='/modelView'></Thumbnail>
+            <Thumbnail title='modelView' route='/modelView'></Thumbnail>
           </Box>
         </Box>
         <Footer />
