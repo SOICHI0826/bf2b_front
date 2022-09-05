@@ -8,12 +8,18 @@ import { Floor } from '../../../common/Floor';
 import { V_SHADER, F_SHADER } from './shader';
 import * as mat4 from "gl-matrix/mat4";
 import * as vec3 from "gl-matrix/vec3";
-import { Text, Icon, Heading, Box, Radio, RadioGroup, Stack, Slider, SliderTrack, SliderFilledTrack, SliderMark, SliderThumb, Divider} from '@chakra-ui/react';
+import { Text, Icon, Heading, Box, Radio, RadioGroup, Stack, Slider, SliderTrack, SliderFilledTrack, SliderMark, SliderThumb} from '@chakra-ui/react';
+import { useSettings } from '../../../utils/adminSetting';
 import { GiRetroController } from 'react-icons/gi';
 import { BiCameraMovie } from 'react-icons/bi';
 import { css } from "@emotion/css";
 
-export const WebGL = () => {
+export const WebGL = (props) => {
+  console.log('isHome', props.isHome);
+  // const isHome = props.isHome;
+  // const isHome = true;
+  const settings = useSettings();
+  const isHome = settings.isHome;
   // canvasサイズを絶対値で指定するために、ビューポートの半分のサイズを計算
   // canvasは相対値で指定できなかったため
   const canvasWidth = Math.ceil(window.innerWidth * 0.6);
@@ -26,7 +32,7 @@ export const WebGL = () => {
   };
   
   let
-  gl, scene, program, clock,
+  fileServer, gl, scene, program, clock,
   WORLD_COORDINATES = 'World Coordinates',
   CAMERA_COORDINATES = 'Camera Coordinates',
   coordinates = WORLD_COORDINATES,
@@ -41,7 +47,14 @@ export const WebGL = () => {
   function configure() {
     // Configure `canvas`
     const canvas = utils.getCanvas('webgl-canvas');
-    // utils.autoResizeCanvas(canvas);
+    
+    // Set ModelServer IP
+    if (isHome){
+      fileServer = 'http://192.168.0.19/';
+    }
+    else{
+      fileServer = 'http://119.172.88.222/';
+    }
 
     // Configure `gl`
     gl = utils.getGLContext(canvas);
@@ -97,7 +110,7 @@ export const WebGL = () => {
   function load() {
     scene.add(new Floor(80, 2));
     scene.add(new Axis(82));
-    scene.load('http://192.168.0.19/cone3.json', 'cone');
+    scene.load(fileServer+'cone3.json', 'cone');
   }
 
   // Initialize the necessary transforms

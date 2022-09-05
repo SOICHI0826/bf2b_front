@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { utils } from '../../../common/utils';
 import { V_SHADER, F_SHADER } from './shader';
 import * as mat4 from "gl-matrix/mat4";
+import { useSettings } from '../../../utils/adminSetting';
 
 export const WebGL = () => {
   // canvasサイズを絶対値で指定するために、ビューポートの半分のサイズを計算
@@ -9,7 +10,11 @@ export const WebGL = () => {
   const canvasWidth = Math.ceil(window.innerWidth * 0.5);
   const canvasHeight= Math.ceil(window.innerHeight * 0.5);
 
+  const settings = useSettings();
+  const isHome = settings.isHome;
+
   let gl,
+  fileServer,
   program,
   parts = [],
   projectionMatrix = mat4.create(),
@@ -19,6 +24,13 @@ export const WebGL = () => {
     // Retrieve shaders based on the shader script IDs
     const vertexShader = utils.getShader(gl, 'vertex', V_SHADER);
     const fragmentShader = utils.getShader(gl, 'fragment', F_SHADER);
+
+    if (isHome){
+      fileServer = 'http://192.168.0.19/';
+    }
+    else{
+      fileServer = 'http://119.172.88.222/';
+    }
 
     program = gl.createProgram();
     gl.attachShader(program, vertexShader);
@@ -38,8 +50,7 @@ export const WebGL = () => {
 
   function load() {
     for (let i = 1; i < 179; i++) {
-      // fetch(`http://119.172.88.222//nissan-gtr/part${i}.json`)
-      fetch(`http://192.168.0.19//nissan-gtr/part${i}.json`)
+      fetch(fileServer + `/nissan-gtr/part${i}.json`)
       .then(res => res.json())
       // eslint-disable-next-line no-loop-func
       .then(data => {

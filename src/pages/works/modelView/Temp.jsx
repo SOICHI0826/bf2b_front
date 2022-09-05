@@ -1,11 +1,10 @@
 import { Header } from '../../../components/Header/Header';
 import { Footer } from '../../../components/Footer/Footer';
-import { Box, Heading } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import { css } from "@emotion/css";
 import { WebGL } from './modelView';
 
-export const ModelView = (props) => {
-  const title = 'ModelView';
+export const ModelView = () => {
   return (
      <Box className={styles.bg} display='flex' flexDirection='column' bg='#F5F5F5' w='100vw' h='100vh'>
           <Header menu='works'/>
