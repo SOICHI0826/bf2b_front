@@ -7,6 +7,7 @@ import { About } from './pages/About';
 import { Settings } from './pages/Settings';
 import { Login } from './pages/Login';
 import { Signup } from './pages/Signup';
+import { RegisterWork } from './pages/RegisterWork';
 import { TestTemp } from './pages/works/test/Temp';
 import { ModelView } from './pages/works/modelView/Temp';
 
@@ -22,8 +23,9 @@ function App() {
             <Route path={'/settings'} element={<Settings />} />
             <Route path={'/login'} element={<Login />} />
             <Route path={'/signup'} element={<Signup />} />
+            <Route path={'/registerWork'} element={<RegisterWork />} />
             <Route path={'/test'} element={<TestTemp /> } />
-            <Route path={'/modelView'} element={<ModelView />} />
+            <Route path={'/works/modelView'} element={<ModelView />} />
           </Routes>
         </BrowserRouter>
       </ProvideSettings>
