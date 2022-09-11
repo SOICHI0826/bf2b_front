@@ -4,14 +4,18 @@ import { Icon, Box, Text, Radio, RadioGroup, Stack, Button } from '@chakra-ui/re
 import { BsPlayFill } from 'react-icons/bs';
 import { useSettings } from '../utils/adminSetting';
 import { css } from "@emotion/css";
+import { useNavigate } from "react-router-dom";
 
 export const Settings = () => {
   // useContextのSettings
   const settings = useSettings();
 
+  const navigate = useNavigate();
+
   const commonStyles = {
     icon: BsPlayFill,
-    iconColor: '#446699'
+    iconColor: '#446699',
+    buttonBg: '#6699AA'
   };
 
   const toBoolean = (string) => {
@@ -24,6 +28,10 @@ export const Settings = () => {
       }else{
         return 'False';
       }
+  }
+
+  const handleNavRegisterWork = () => {
+      navigate('/registerWork');
   }
 
   return (
@@ -47,30 +55,29 @@ export const Settings = () => {
                       </Stack>
                   </RadioGroup>
               </Box>
+
               <Box className={styles.registerWork} mt='2vh' ml='2vw'>
                   <Box className={styles.settingTitle} display='flex'>
                       <Icon mr='1vw' w={8} h={8} as={ commonStyles.icon } color={commonStyles.iconColor} />
-                      <Text as='b' fontSize='xl'>Register Work Info</Text>
+                      <Text as='b' fontSize='xl'>Work</Text>
+                  </Box>
+                  <Box className={styles.workSettings} mt='2vh' ml='4vw' display='flex'>
+                      <Button mr='4vw' w='6vw' bg={commonStyles.buttonBg} borderWidth='1px' borderColor='black' onClick={handleNavRegisterWork}>Register</Button>
+                      <Button w='6vw' bg={commonStyles.buttonBg}borderWidth='1px' borderColor='black'>Edit</Button>
                   </Box>
               </Box>
-              <Box className={styles.editWork} mt='2vh' ml='2vw'>
-                  <Box className={styles.settingTitle} display='flex'>
-                      <Icon mr='1vw' w={8} h={8} as={ commonStyles.icon } color={commonStyles.iconColor} />
-                      <Text as='b' fontSize='xl'>Edit Work Info</Text>
-                  </Box>
-              </Box>
+              
               <Box className={styles.registerNews} mt='2vh' ml='2vw'>
                   <Box className={styles.settingTitle} display='flex'>
                       <Icon mr='1vw' w={8} h={8} as={ commonStyles.icon } color={commonStyles.iconColor} />
-                      <Text as='b' fontSize='xl'>Register News</Text>
+                      <Text as='b' fontSize='xl'>News</Text>
+                  </Box>
+                  <Box className={styles.workSettings} mt='2vh' ml='4vw' display='flex'>
+                      <Button mr='4vw' w='6vw' bg={commonStyles.buttonBg} borderWidth='1px' borderColor='black'>Register</Button>
+                      <Button w='6vw' bg={commonStyles.buttonBg}borderWidth='1px' borderColor='black'>Edit</Button>
                   </Box>
               </Box>
-              <Box className={styles.editNews} mt='2vh' ml='2vw'>
-                  <Box className={styles.settingTitle} display='flex'>
-                      <Icon mr='1vw' w={8} h={8} as={ commonStyles.icon } color={commonStyles.iconColor} />
-                      <Text as='b' fontSize='xl'>Edit News</Text>
-                  </Box>
-              </Box>
+
           </Box>
           <Footer />
       </Box>
