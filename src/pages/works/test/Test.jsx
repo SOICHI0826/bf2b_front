@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { utils } from '../../../common/utils';
 import { V_SHADER, F_SHADER } from './shader';
 import * as mat4 from "gl-matrix/mat4";
-import { useSettings } from '../../../utils/adminSetting';
+import { useSettings } from '../../../utils/commonSetting';
 
 export const WebGL = () => {
   // canvasサイズを絶対値で指定するために、ビューポートの半分のサイズを計算

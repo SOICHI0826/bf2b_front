@@ -9,7 +9,7 @@ import { V_SHADER, F_SHADER } from './shader';
 import * as mat4 from "gl-matrix/mat4";
 import * as vec3 from "gl-matrix/vec3";
 import { Text, Icon, Heading, Box, Radio, RadioGroup, Stack, Slider, SliderTrack, SliderFilledTrack, SliderMark, SliderThumb} from '@chakra-ui/react';
-import { useSettings } from '../../../utils/adminSetting';
+import { useSettings } from '../../../utils/commonSetting';
 import { GiRetroController } from 'react-icons/gi';
 import { BiCameraMovie } from 'react-icons/bi';
 import { css } from "@emotion/css";

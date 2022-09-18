@@ -14,9 +14,17 @@ export const useSettings = () => {
 
 const useProvideSettings = () => {
     const [ isHome, setIsHome ] = useState(true);
-
+    const [ loggedInSuccess, setLoggedInSuccess ] = useState(false);
+    const [ signedUpSuccess, setSignedUpSuccess ] = useState(false);
+    const [ loggedOutSuccess, setLoggedOutSuccess ] = useState(false);
     return {
         isHome,
-        setIsHome
+        setIsHome,
+        loggedInSuccess,
+        setLoggedInSuccess,
+        signedUpSuccess,
+        setSignedUpSuccess,
+        loggedOutSuccess,
+        setLoggedOutSuccess
     }
 }

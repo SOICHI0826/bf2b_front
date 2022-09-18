@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
-import { ProvideSettings } from './utils/adminSetting';
+import { ProvideSettings } from './utils/commonSetting';
+import { AuthProvider} from './utils/authSettings';
 import { Main } from './pages/Main';
 import { News } from './pages/News';
 import { About } from './pages/About';
@@ -14,21 +15,23 @@ import { ModelView } from './pages/works/modelView/Temp';
 function App() {
   return (
     <ChakraProvider>
-      <ProvideSettings>
-        <BrowserRouter>
-          <Routes>
-            <Route path={'/'} element={<Main />} />
-            <Route path={'/news'} element={<News />} />
-            <Route path={'/about'} element={<About />} />
-            <Route path={'/settings'} element={<Settings />} />
-            <Route path={'/login'} element={<Login />} />
-            <Route path={'/signup'} element={<Signup />} />
-            <Route path={'/registerWork'} element={<RegisterWork />} />
-            <Route path={'/test'} element={<TestTemp /> } />
-            <Route path={'/works/modelView'} element={<ModelView />} />
-          </Routes>
-        </BrowserRouter>
-      </ProvideSettings>
+        <AuthProvider>
+            <ProvideSettings>
+                <BrowserRouter>
+                    <Routes>
+                        <Route path={'/'} element={<Main />} />
+                        <Route path={'/news'} element={<News />} />
+                        <Route path={'/about'} element={<About />} />
+                        <Route path={'/settings'} element={<Settings />} />
+                        <Route path={'/login'} element={<Login />} />
+                        <Route path={'/signup'} element={<Signup />} />
+                        <Route path={'/registerWork'} element={<RegisterWork />} />
+                        <Route path={'/test'} element={<TestTemp /> } />
+                        <Route path={'/works/modelView'} element={<ModelView />} />
+                    </Routes>
+                </BrowserRouter>
+            </ProvideSettings>
+        </AuthProvider>
     </ChakraProvider>
   );
 }

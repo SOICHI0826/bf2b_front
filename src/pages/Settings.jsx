@@ -2,7 +2,7 @@ import { Header } from '../components/Header/Header';
 import { Footer } from '../components/Footer/Footer';
 import { Icon, Box, Text, Radio, RadioGroup, Stack, Button } from '@chakra-ui/react';
 import { BsPlayFill } from 'react-icons/bs';
-import { useSettings } from '../utils/adminSetting';
+import { useSettings } from '../utils/commonSetting';
 import { css } from "@emotion/css";
 import { useNavigate } from "react-router-dom";
 
@@ -77,7 +77,6 @@ export const Settings = () => {
                       <Button w='6vw' bg={commonStyles.buttonBg}borderWidth='1px' borderColor='black'>Edit</Button>
                   </Box>
               </Box>
-
           </Box>
           <Footer />
       </Box>

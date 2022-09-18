@@ -11,7 +11,7 @@ import { BsKey, BsKeyFill} from 'react-icons/bs';
 import { useSettings } from '../utils/commonSetting';
 import { useAuth } from '../utils/authSettings';
 
-export const Signup = () => {
+export const SignupTemp = () => {
     // Username
     const [username, setUsername] = useState();
     // Email
@@ -110,8 +110,6 @@ export const Signup = () => {
                     auth.setIsAdmin(res.data.is_admin);
                     // ログインステータス設定
                     auth.setIsLoggedIn(true);
-                    //　サインアップ成功フラグ設定
-                    settings.setSignedUpSuccess(true);
                     // Mainページへ遷移
                     navigate('/');
                 }else{

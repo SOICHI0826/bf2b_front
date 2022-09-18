@@ -7,9 +7,9 @@ import { useNavigate } from "react-router-dom";
 import { BiX } from 'react-icons/bi'
 import axios from 'axios';
 
-import { useSettings } from '../utils/adminSetting';
+import { useSettings } from '../utils/commonSetting';
 // import { IgnorePlugin } from 'webpack';
-
+ 
 export const RegisterWork = () => {
     const navigate = useNavigate();
     const [title, setTitle] = useState('');
@@ -23,10 +23,9 @@ export const RegisterWork = () => {
     let endpoint;
     if (isHome){
         endpoint = 'http://192.168.0.19:8000/works';
-      }
-      else{
+    }else{
         endpoint = 'http://119.172.88.222:8000/works';
-      }
+    }
 
     // Submitボタン押下時のイベント
     const handleOnSubmit = () => {
@@ -49,7 +48,6 @@ export const RegisterWork = () => {
     // axiosで入力データをpost
     const postData = (data) => {
         axios.defaults.headers['Content-Type'] = 'application/json';
-        axios.defaults.headers['Access-Control-Allow-Origin'] = '*';
         const url = axios.post(endpoint, data)
         .then(() => {
             setSubmitCondition('success');

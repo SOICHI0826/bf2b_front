@@ -1,11 +1,12 @@
 import { Header } from '../components/Header/Header';
 import { Footer } from '../components/Footer/Footer';
 import { Thumbnail } from '../components/Thumbnail/Thumbnail';
-import { Box, Button } from '@chakra-ui/react';
+import { Heading, Icon, Box, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalCloseButton } from '@chakra-ui/react';
 import { css } from "@emotion/css";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useSettings } from '../utils/adminSetting';
+import { useSettings } from '../utils/commonSetting';
+import { AiOutlineCheckCircle } from 'react-icons/ai';
 
 export const Main = () => {
   // オブジェクト初期化
@@ -31,9 +32,7 @@ export const Main = () => {
 
   const getWorks = async() => {
       axios.defaults.headers['Content-Type'] = 'application/json';
-      axios.defaults.headers['Access-Control-Allow-Origin'] = '*';
       const response = await axios.get(endpoint + 'page=' + page + '&' + 'sort_type=' + sortType)
-      console.log(response.data);
       setWork1({...work1, title: response.data.res[0].title, path: response.data.res[0].path, thumb_img: response.data.res[0].thumb_img});
       setWork2({...work2, title: response.data.res[1].title, path: response.data.res[1].path, thumb_img: response.data.res[1].thumb_img});
       setWork3({...work3, title: response.data.res[2].title, path: response.data.res[2].path, thumb_img: response.data.res[2].thumb_img});
@@ -42,13 +41,14 @@ export const Main = () => {
       setWork6({...work6, title: response.data.res[5].title, path: response.data.res[5].path, thumb_img: response.data.res[5].thumb_img});
   }
 
-  const checkRes = () => {
-      console.log("work1", work1);
-      console.log("work2", work2);
-      console.log("work3", work3);
-      console.log("work4", work4);
-      console.log("work5", work5);
-      console.log("work6", work6);
+  const onModalClose = () => {
+      if (settings.loggedInSuccess){
+          settings.setLoggedInSuccess(false);
+      }else if (settings.signedUpSuccess){
+          settings.setSignedUpSuccess(false);
+      }else if (settings.loggedOutSuccess){
+          settings.setLoggedOutSuccess(false);
+      }
   }
 
   useEffect(() => {
@@ -58,12 +58,6 @@ export const Main = () => {
   return (
      <Box className={styles.bg} display='flex' flexDirection='column' bg='#F5F5F5' w='100vw' h='100vh'>
         <Header menu='works' />
-        {/* <Box className={styles.pageInfo} display='flex'>
-          <Select size='md' bg='#FFFFFF' borderWidth='1px' borderColor='#3182CE' w='20vw' h='5vh'>
-            <option value='option1'>Date</option>
-            <option value='option2'>Popularity</option>
-          </Select>
-        </Box> */}
         <Box className={styles.worksContainer} ml='12.5%' mt='10vh' bgColor='rgb(255, 230, 230, 0.3)' border='1px' borderColor='#000000' w='75%' h='70%'>
             <Box className={styles.upperContainer} pt='20px' display='flex' justifyContent='space-evenly'>
                 {/* Work1 */}
@@ -122,7 +116,45 @@ export const Main = () => {
                 }
             </Box>
         </Box>
-        {/* <Button onClick={checkRes}>test</Button> */}
+        {/* サインアップ直後に表示するモーダル */}
+        <Modal size='2xl' isOpen={settings.signedUpSuccess} onClose={onModalClose}>
+            <ModalOverlay />
+            <ModalContent mt='35vh' bg='#F5F5F5' borderWidth='2px' borderColor='#38D173'>
+                <ModalHeader color='#38D173' display='flex'>
+                    <Icon mr='1vw' w={8} h={8} as={AiOutlineCheckCircle} />
+                    <Heading fontSize='24px'>Signed Up Successfully!</Heading>
+                </ModalHeader>
+                <ModalCloseButton />
+                <ModalBody>
+                </ModalBody>
+            </ModalContent>
+        </Modal>
+        {/* ログイン直後に表示するモーダル */}
+        <Modal size='2xl' isOpen={settings.loggedInSuccess} onClose={onModalClose}>
+            <ModalOverlay />
+            <ModalContent mt='35vh' bg='#F5F5F5' borderWidth='2px' borderColor='#38D173'>
+                <ModalHeader color='#38D173' display='flex'>
+                    <Icon mr='1vw' w={8} h={8} as={AiOutlineCheckCircle} />
+                    <Heading fontSize='24px'>Logged In Successfully!</Heading>
+                </ModalHeader>
+                <ModalCloseButton />
+                <ModalBody>
+                </ModalBody>
+            </ModalContent>
+        </Modal>
+        {/* ログアウト直後に表示するモーダル */}
+        <Modal size='2xl' isOpen={settings.loggedOutSuccess} onClose={onModalClose}>
+            <ModalOverlay />
+            <ModalContent mt='35vh' bg='#F5F5F5' borderWidth='2px' borderColor='#38D173'>
+                <ModalHeader color='#38D173' display='flex'>
+                    <Icon mr='1vw' w={8} h={8} as={AiOutlineCheckCircle} />
+                    <Heading fontSize='24px'>Logged Out Successfully!</Heading>
+                </ModalHeader>
+                <ModalCloseButton />
+                <ModalBody>
+                </ModalBody>
+            </ModalContent>
+        </Modal>
         <Footer />
      </Box>
   )
