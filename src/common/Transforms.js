@@ -1,6 +1,5 @@
+import * as mat4 from 'gl-matrix/mat4';
 /* eslint-disable */
-'use strict';
-
 // Encapsulates common transformations in a 3D scene
 export class Transforms {
 

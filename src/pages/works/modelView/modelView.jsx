@@ -14,10 +14,7 @@ import { GiRetroController } from 'react-icons/gi';
 import { BiCameraMovie } from 'react-icons/bi';
 import { css } from "@emotion/css";
 
-export const WebGL = (props) => {
-  console.log('isHome', props.isHome);
-  // const isHome = props.isHome;
-  // const isHome = true;
+export const WebGL = () => {
   const settings = useSettings();
   const isHome = settings.isHome;
   // canvasサイズを絶対値で指定するために、ビューポートの半分のサイズを計算
@@ -266,7 +263,7 @@ export const WebGL = (props) => {
           </Button> */}
         </Box>
         <canvas id="webgl-canvas" width={canvasWidth} height={canvasHeight}>
-          Your browser doesn't support the HTML5 canvas element
+            Your browser doesn't support the HTML5 canvas element
         </canvas>
         <div className={styles.info}>
             <p className={styles.matrixTitle} id="coordinates">World Coordinates</p>

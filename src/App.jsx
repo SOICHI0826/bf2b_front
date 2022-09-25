@@ -11,6 +11,7 @@ import { Signup } from './pages/Signup';
 import { RegisterWork } from './pages/RegisterWork';
 import { TestTemp } from './pages/works/test/Temp';
 import { ModelView } from './pages/works/modelView/Temp';
+import { WallSpot } from './pages/works/wallSpot/workPage';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
                         <Route path={'/registerWork'} element={<RegisterWork />} />
                         <Route path={'/test'} element={<TestTemp /> } />
                         <Route path={'/works/modelView'} element={<ModelView />} />
+                        <Route path={'/works/wallSpot'} element={<WallSpot />} />
                     </Routes>
                 </BrowserRouter>
             </ProvideSettings>
