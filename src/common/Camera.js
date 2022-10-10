@@ -1,3 +1,6 @@
+import * as vec3 from 'gl-matrix/vec3';
+import * as vec4 from 'gl-matrix/vec4';
+import * as mat4 from 'gl-matrix/mat4';
 /* eslint-disable */
 // Abstraction over constructing and interacting with a 3D scene using a camera
 export class Camera {
