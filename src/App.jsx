@@ -4,7 +4,7 @@ import { ProvideSettings } from './utils/commonSetting';
 import { AuthProvider} from './utils/authSettings';
 import { Main } from './pages/Main';
 import { News } from './pages/News';
-import { About } from './pages/About';
+import { About } from './pages/about/About';
 import { Settings } from './pages/Settings';
 import { Login } from './pages/Login';
 import { Signup } from './pages/Signup';

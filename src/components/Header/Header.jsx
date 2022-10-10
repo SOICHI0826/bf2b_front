@@ -66,7 +66,7 @@ export const Header = (props) => {
     }
 
     return (
-        <Box display='flex' bgColor='rgb(29, 113, 173, 0.6)' w='100vw' h='15%'>
+        <Box display='flex' bgColor='rgb(29, 113, 173, 0.6)' w='100vw' h='15vh'>
             <Box className={styles.logo} w='10vw'>
                 <Button variant='unstyled' bgColor='rgb(0, 0, 0, 0)' h='100%' onClick={handleIconButton}>
                     <Image src='/logo.png' />
